@@ -1,0 +1,50 @@
+     A                                      INDARA
+     A                                      CA03(03)
+     A          R HEADER
+     A                                  1  2SYSNAME
+     A                                  1 27'SYSTEM_STATUS_INFO_BASIC View'
+     A                                      COLOR(WHT)
+     A                                  1 70DATE(*YY)
+     A                                      EDTCDE(Y)
+     A            PGMNAME        9   O  2  2
+     A                                  2 71TIME
+     A          R SYSSTSDTA                 OVERLAY
+     A                                  5  5'CPU:'
+     A                                  6  7'% CPU used . . . . . . . :'
+     A                                  7  7'Elapsed time . . . . . . :'
+     A                                  8  7'Jobs in system . . . . . :'
+     A                                  9  7'% perm addresses . . . . :'
+     A                                 10  7'% temp addresses . . . . :'
+     A            ELAP_USED      5  2O  6 37EDTCDE(1)
+     A            ELAP_TIME      8   O  7 35
+     A            TOTAL_JOBS     9  0O  8 34EDTCDE(Z)
+     A            PERM_RATE      6  3O  9 36EDTCDE(1)
+     A            TEMP_RATE      6  3O 10 36EDTCDE(1)
+     A                                 12  5'Auxiliary storage:'
+     A                                 13  7'System ASP . . . . . . . :'
+     A                                 14  7'% System ASP used. . . . :'
+     A                                 15  7'Total. . . . . . . . . . :'
+     A                                 16  7'Current temporary used . :'
+     A                                 17  7'Peak temporary used. . . :'
+     A            SYS_STG        5  1O 13 34EDTCDE(1)
+     A            SYS_RATE       6  4O 14 36EDTCDE(1)
+     A            AUX_STG        5  1O 15 34EDTCDE(1)
+     A            TEMP_CURR      6  0O 16 35EDTCDE(Z)
+     A            TEMP_MAX       6  0O 17 35EDTCDE(Z)
+     A                                 16 42'M'
+     A                                 17 42'M'
+     A                                 13 42'G'
+     A                                 15 42'G'
+     A          R FKEYS                     OVERLAY
+     A                                 23  2'F3=Exit'
+     A                                      COLOR(BLU)
+
+     A*%%RS+<record-sequences>
+     A*%%RS+ <sequence name="System Status">
+     A*%%RS+  <device type="display" width="80" height="24" />
+     A*%%RS+  <record-write record-format="HEADER" />
+     A*%%RS+  <record-write record-format="SYSSTSDTA" />
+     A*%%RS+  <record-write record-format="FKEYS" />
+     A*%%RS+  <record-write record-format="STGDATA" />
+     A*%%RS+ </sequence>
+     A*%%RS </record-sequences> 
