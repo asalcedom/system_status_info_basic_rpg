@@ -42,6 +42,7 @@ dcl-s hours   char(2);
 dcl-s minutes char(2);
 dcl-s seconds char(2);
 
+pgmname = 'DB2SYSSTSI';
 write header;
 write fkeys;
 
